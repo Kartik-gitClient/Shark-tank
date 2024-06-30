@@ -1,0 +1,46 @@
+{
+  "Reviews": [ 
+    {
+        "id": 1,
+        "username": "Rajesh",
+        "rating": 4,
+        "comment": "Great product! I really liked the flavoures of your Detox Drinks and also i have taken Your monthly Subscription , It really realeaves my stress after my office work , Overall Nice Product looking forward for more Services."
+    },
+    {
+        "id": 2,
+        "username": "Seema",
+        "rating": 4,
+        "comment": "Fantastic service and excellent product. I've been using it for a month now and I'm very satisfied with the results. My Children like all the flavours and They dont get sick too often , overall good job CleansWave."
+    },
+    {
+        "id": 3,
+        "username": "Yuvraj",
+        "rating": 4.8,
+        "comment": "This is by far the best I've used. I have tried many Detox Drinks from different Brands but CleansWave is a GameChanger "
+    },
+    {
+        "id": 4,
+        "username": "Sakshi",
+        "rating": 5,
+        "comment": "Solid performance and reliable. I made my customizable drink and it was just too good  , I am customer of CleansWave from last year and my experience is amazing. "
+    },
+    {
+        "id": 5,
+        "username": "Anjali",
+        "rating": 5,
+        "comment": "Amazing Drink! The Taste is excellent and the website is very user-friendly. I would recommend this to anyone looking for a healthy Detox and the Subscription Feature is just amazing just pay 1 time and done!."
+    },
+    {
+        "id": 6,
+        "username": "Krishna",
+        "rating": 4,
+        "comment": "Very satisfied with this purchase. It just too soothing and pure i would recommended this to everyone who has a busy lifestyle and the delivery was quick. Good value for money."
+    },
+    {
+        "id": 7,
+        "username": "Shakira",
+        "rating": 4,
+        "comment": "Website has Impressive features and great usability. It has made my day to day life so healthy and full of energy. Highly recommended for Senior citizens and housewifes anyone in need of this type of product."
+    }
+  ]
+}
