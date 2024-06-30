@@ -25,6 +25,8 @@ const BulkOrder = () => {
       customization,
       date: new Date().toISOString(),
     };
+    
+    
 
     const storedOrders = JSON.parse(localStorage.getItem('bulkOrders')) || [];
     const updatedOrders = [...storedOrders, order];
