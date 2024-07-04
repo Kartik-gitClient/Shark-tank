@@ -41,7 +41,7 @@ const Subscription = ({ onSubscribe }) => {
   ];
 
   const handleSubscribe = (subscriptionType) => {
-    const UserSub=window.confirm(`Do You really Want to Subscribe ${selectedSubscription} `)
+     const UserSub=window.confirm(`Do You really Want to Subscribe to this Subscription ?`)
     if(UserSub){
     const selectedSubscription = subscriptions.find(sub => sub.type === subscriptionType);
     if (selectedSubscription) {
@@ -51,6 +51,7 @@ const Subscription = ({ onSubscribe }) => {
         benefits: selectedSubscription.benefits,
         date: new Date().toISOString()
       };
+     
 
       const storedSubscriptions = JSON.parse(localStorage.getItem('subscriptions')) || [];
       storedSubscriptions.push(subscribedItem);

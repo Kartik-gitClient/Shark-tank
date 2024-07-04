@@ -8,6 +8,8 @@ const Orders = () => {
   const [subscriptions, setSubscriptions] = useState([]);
   const date = new Date().toISOString().split('T')[0]
 
+
+
   useEffect(() => {
     setTimeout(() => {
       const storedOrders = JSON.parse(localStorage.getItem('orders')) || [];
@@ -50,7 +52,7 @@ const Orders = () => {
                   </tr>
                   <tr>
                     <td className="py-2 px-4 border-b text-gray-700">Address</td>
-                    <td className="py-2 px-4 border-b text-gray-700">{ date }</td>
+                    <td className="py-2 px-4 border-b text-gray-700">{date}</td>
                   </tr>
                 </tbody>
               </table>
@@ -61,8 +63,8 @@ const Orders = () => {
           ))
         ) : (
           <>
-            {orders.length === 0 && bulkOrders.length === 0 && subscriptions.length === 0 ? (
-              Array.from({ length: 9 }, (_, i) => (
+            {orders.length === 0 ? (
+              Array.from({ length: 3 }, (_, i) => (
                 <div className="mb-6 p-4 border rounded shadow-sm animate-pulse" key={i}>
                   <div className="h-6 bg-gray-300 rounded w-1/2 mb-2"></div>
                   <div className="h-4 bg-gray-300 rounded w-1/3 mb-2"></div>
@@ -71,11 +73,11 @@ const Orders = () => {
                   <div className="h-4 bg-gray-300 rounded w-1/4 mb-2"></div>
                   <div className="w-40 h-40 bg-gray-300 rounded mb-4"></div>
                 </div>
-              ))
-            ) : (
+                ))
+              ) : (
               <h1 className="text-2xl">
-              <pre>No Orders Placed Yet ;)</pre>
-            </h1>
+                <pre>No Orders Placed Yet ;)</pre>
+              </h1>
             )}
           </>
         )}
@@ -119,6 +121,8 @@ const Orders = () => {
             </div>
           ))
         ) : (
+
+          
           <h1 className="text-2xl">
             <pre>No Bulk Orders Placed Yet ;)</pre>
           </h1>
@@ -165,6 +169,7 @@ const Orders = () => {
             </div>
           ))
         ) : (
+          
           <h1 className="text-2xl">
             <pre>No Subscriptions Placed Yet ;)</pre>
           </h1>
