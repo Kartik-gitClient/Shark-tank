@@ -15,7 +15,7 @@ const socialMedia = [
 const Marketplace = () => {
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8 text-green-700">Connect and Browse our Marketplace on Social Media</h1>
+      <h1 className="text-3xl font-bold text-center mb-8 text-amber-700">Connect and Browse our Marketplace on Social Media</h1>
       <div className="space-y-10">
         {socialMedia.map((platform, index) => (
           <div key={platform.name} className={`flex items-center justify-between ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
