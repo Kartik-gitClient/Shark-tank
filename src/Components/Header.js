@@ -1,70 +1,107 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../Assets/logoc.jpg"
+import logo from "../Assets/logoc.jpg";
 import userIcon from '../Assets/user.png';
 import { UserContext } from '../Pages/UserContext';
 
 const Header = () => {
-  const { user , logout } = useContext(UserContext);
+  const { user, logout } = useContext(UserContext);
 
   return (
-    <header className="flex flex-wrap justify-between items-center p-3 lg:p-5 bg-gradient-to-r from-green-500 to-yellow-500 text-white">
-      <div className="flex items-center mb-3 lg:mb-0">
-        <img src={logo} alt="Logo" className="w-12 rounded-3xl object-cover h-12 mr-2 lg:mr-3" />
-        <span className="text-2xl font-semibold">CleansWave</span>
+    <header className="flex flex-wrap justify-between items-center p-4 bg-gradient-to-r from-amber-800 to-amber-600 text-white shadow-lg">
+      {/* Logo & Brand Name */}
+      <div className="flex items-center mb-4 lg:mb-0">
+        <img 
+          src={logo} 
+          alt="Logo" 
+          className="w-12 h-12 rounded-full object-cover border-2 border-amber-200 shadow-md" 
+        />
+        <span className="text-2xl font-bold ml-3 font-serif text-amber-50">
+          Café Delight
+        </span>
       </div>
 
-      <nav className="flex justify-center w-full lg:w-auto mb-3 lg:mb-0">
-        <ul className="flex flex-wrap justify-center lg:justify-start space-x-4 lg:space-x-6">
+      {/* Navigation Menu */}
+      <nav className="w-full lg:w-auto mb-4 lg:mb-0">
+        <ul className="flex flex-wrap justify-center lg:justify-start space-x-4 lg:space-x-8">
           <li>
-            <Link to="/" className="text-xl text-white hover:text-amber-400  hover:text-2xl transition duration-300 transition duration-300">
-              Store
+            <Link 
+              to="/" 
+              className="text-lg font-medium hover:text-amber-200 hover:underline transition duration-300"
+            >
+              Menu
             </Link>
           </li>
           <li>
-            <Link to="/marketplace" className="text-xl text-white hover:text-amber-400 hover:text-2xl transition duration-300">
-              Marketplace
+            <Link 
+              to="/marketplace" 
+              className="text-lg font-medium hover:text-amber-200 hover:underline transition duration-300"
+            >
+              Order Online
             </Link>
           </li>
           <li>
-            <Link to="/community" className="text-xl text-white hover:text-amber-400  hover:text-2xl transition duration-300">
-              Community
+            <Link 
+              to="/community" 
+              className="text-lg font-medium hover:text-amber-200 hover:underline transition duration-300"
+            >
+              Events
             </Link>
           </li>
           <li>
-        <Link to="/Orders" className="text-xl text-white hover:text-amber-400  hover:text-2xl transition duration-300">
-        Subscriptions
-        </Link>
-      </li>
+            <Link 
+              to="/Orders" 
+              className="text-lg font-medium hover:text-amber-200 hover:underline transition duration-300"
+            >
+              Reservations
+            </Link>
+          </li>
         </ul>
-       
       </nav>
 
-      <div className="relative ml-3 flex lg:ml-5 group">
+      {/* User Section */}
+      <div className="relative flex items-center group">
         {user ? (
-          <div className="flex items-center">
-            <img src={userIcon} alt="User Icon" className="w-10 h-10 bg-green rounded-full cursor-pointer border-white" />
-            <span className="mr-4 bold  text-lg">Hii {user.username.toUpperCase()}</span>
-            <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
+          <div className="flex items-center space-x-4">
+            <span className="text-lg font-medium text-amber-100">
+              Welcome, {user.username.toUpperCase()}
+            </span>
+            <img 
+              src={userIcon} 
+              alt="User Icon" 
+              className="w-10 h-10 rounded-full border-2 border-amber-200 cursor-pointer" 
+            />
+            <button 
+              onClick={logout} 
+              className="bg-amber-900 hover:bg-amber-800 text-white py-2 px-4 rounded-lg transition duration-300"
+            >
               Log Out
             </button>
           </div>
         ) : (
           <>
-            <img src={userIcon} alt="User Icon" className="w-10 mx-5 h-10 rounded-full cursor-pointer border-white" />
-            <div className="absolute right-1 mt-2 w-20 bg-white rounded-md shadow-lg overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <Link to="/login" className="block border-2 border-gray-300  text-center py-2 text-gray-800 hover:bg-gray-100">
+            <img 
+              src={userIcon} 
+              alt="User Icon" 
+              className="w-10 h-10 rounded-full border-2 border-amber-200 cursor-pointer" 
+            />
+            <div className="absolute right-0 top-full mt-2 w-32 bg-white rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+              <Link 
+                to="/login" 
+                className="block px-4 py-2 text-amber-900 hover:bg-amber-50 border-b border-amber-100"
+              >
                 Login
               </Link>
-              <Link to="/signup" className="block border-2 border-gray-300 text-center py-2 text-gray-800 hover:bg-gray-100">
-                Signup
+              <Link 
+                to="/signup" 
+                className="block px-4 py-2 text-amber-900 hover:bg-amber-50"
+              >
+                Sign Up
               </Link>
             </div>
           </>
         )}
       </div>
-
-      
     </header>
   );
 };
